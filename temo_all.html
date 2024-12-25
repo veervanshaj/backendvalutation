@@ -18,24 +18,24 @@
         .container {
             display: flex;
             justify-content: space-around;
-            width: 600px;
+            width: 800px; /* Increased width */
             background-color: #f5f5f5;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .left {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 200px;
-            padding: 20px;
+            width: 300px; /* Increased width */
+            padding: 30px; /* Increased padding */
         }
 
         .right {
             background-color: #ffeaeb;
-            width: 300px;
-            padding: 20px;
+            width: 400px; /* Increased width */
+            padding: 30px; /* Increased padding */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -49,22 +49,23 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 28px; /* Larger font size */
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         p {
             text-align: center;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            font-size: 16px; /* Larger font size */
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
 
         input, select, button {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 15px; /* Increased padding */
+            margin-bottom: 15px;
+            font-size: 16px; /* Larger font size */
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -79,6 +80,7 @@
             color: white;
             border: none;
             cursor: pointer;
+            font-size: 18px; /* Larger font size */
         }
 
         button:hover {
@@ -86,20 +88,20 @@
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-align: left;
             width: 100%;
         }
 
         label {
             display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
+            font-size: 16px; /* Larger font size */
+            margin-bottom: 8px;
         }
 
         .error {
             color: red;
-            font-size: 12px;
+            font-size: 14px;
             display: none;
         }
 
@@ -112,7 +114,7 @@
         .gender-group label {
             margin-left: 5px;
             margin-right: 15px;
-            font-size: 14px;
+            font-size: 16px; /* Larger font size */
         }
 
         .gender-group input {
@@ -123,9 +125,9 @@
 <body>
     <div class="container">
         <div class="left">
-            <img src="https://img.freepik.com/premium-photo/serene-young-woman-enjoying-cherry-blossom-season-gentle-pink-petals-falling-around-her-sunlit_996993-33015.jpg?w=360" alt="Sample Image">
-            <h1>Hold On, Gorgeous!</h1>
-            <p>You're always in such a rush... slow down and get 15% off your first order.</p>
+            <img src="https://tse3.mm.bing.net/th?id=OIG3.lqxvlk.hARDCW2G9DZ_8&pid=ImgGn" alt="Motivational Image">
+            <h1>Hold On, Nerd!</h1>
+            <p>You're always excited to know more... slow down and get 15% off your first month.</p>
         </div>
         <div class="right">
             <form onsubmit="validateForm(event)">
@@ -148,9 +150,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="number">Number:</label>
-                    <input type="number" id="number" placeholder="Enter a number">
-                    <span id="numberError" class="error">Please enter a valid number.</span>
+                    <label for="number">Phone no:</label>
+                    <input type="tel" id="number" placeholder="Enter your phone number">
+                    <span id="numberError" class="error">Please enter a valid phone number.</span>
                 </div>
 
                 <div class="form-group">
@@ -168,7 +170,6 @@
         </div>
     </div>
 
-<!-- scripts to be kept after html -->
     <script>
         function validateForm(event) {
             event.preventDefault();
@@ -204,7 +205,7 @@
                 dobError.style.display = 'none';
             }
 
-            if (!number.value || number.value <= 0) {
+            if (!number.value || isNaN(number.value) || number.value.trim().length === 0) {
                 numberError.style.display = 'block';
                 isValid = false;
             } else {
