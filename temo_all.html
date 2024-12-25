@@ -119,53 +119,6 @@
             margin-right: 5px;
         }
     </style>
-    <script>
-        function validateForm(event) {
-            event.preventDefault();
-            const email = document.getElementById('email');
-            const password = document.getElementById('password');
-            const dob = document.getElementById('dob');
-            const number = document.getElementById('number');
-            const emailError = document.getElementById('emailError');
-            const passwordError = document.getElementById('passwordError');
-            const dobError = document.getElementById('dobError');
-            const numberError = document.getElementById('numberError');
-
-            let isValid = true;
-
-            if (!email.value || !email.value.includes('@')) {
-                emailError.style.display = 'block';
-                isValid = false;
-            } else {
-                emailError.style.display = 'none';
-            }
-
-            if (!password.value || password.value.length < 6) {
-                passwordError.style.display = 'block';
-                isValid = false;
-            } else {
-                passwordError.style.display = 'none';
-            }
-
-            if (!dob.value) {
-                dobError.style.display = 'block';
-                isValid = false;
-            } else {
-                dobError.style.display = 'none';
-            }
-
-            if (!number.value || number.value <= 0) {
-                numberError.style.display = 'block';
-                isValid = false;
-            } else {
-                numberError.style.display = 'none';
-            }
-
-            if (isValid) {
-                alert('Form submitted successfully!');
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -214,5 +167,54 @@
             </form>
         </div>
     </div>
+
+<!-- scripts to be kept after html -->
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const dob = document.getElementById('dob');
+            const number = document.getElementById('number');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const dobError = document.getElementById('dobError');
+            const numberError = document.getElementById('numberError');
+
+            let isValid = true;
+
+            if (!email.value || !email.value.includes('@')) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            if (!password.value || password.value.length < 6) {
+                passwordError.style.display = 'block';
+                isValid = false;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            if (!dob.value) {
+                dobError.style.display = 'block';
+                isValid = false;
+            } else {
+                dobError.style.display = 'none';
+            }
+
+            if (!number.value || number.value <= 0) {
+                numberError.style.display = 'block';
+                isValid = false;
+            } else {
+                numberError.style.display = 'none';
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
 </body>
 </html>
