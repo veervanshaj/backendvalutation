@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Design</title>
+    <title>Newsletter Form</title>
     <style>
         body {
             background-color: #d8d8d8;
@@ -127,46 +127,47 @@
         <div class="left">
             <img src="https://tse3.mm.bing.net/th?id=OIG3.lqxvlk.hARDCW2G9DZ_8&pid=ImgGn" alt="Motivational Image">
             <h1>Hold On, Nerd!</h1>
-            <p>You're always excited to know more... slow down and get 15% off your first month.</p>
+            <p>You're always excited to know more... slow down and get updates for your first month.</p>
         </div>
         <div class="right">
-            <form onsubmit="validateForm(event)">
+            <form action="/submit" method="POST">
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Enter your email">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     <span id="emailError" class="error">Please enter a valid email.</span>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" placeholder="Enter your password">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                     <span id="passwordError" class="error">Password must be at least 6 characters long.</span>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob">
+                    <input type="date" id="dob" name="dob" required>
                     <span id="dobError" class="error">Please select your date of birth.</span>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="number">Phone no:</label>
-                    <input type="tel" id="number" placeholder="Enter your phone number">
+                    <input type="tel" id="number" name="number" placeholder="Enter your phone number" required>
                     <span id="numberError" class="error">Please enter a valid phone number.</span>
                 </div>
-
+            
                 <div class="form-group">
                     <label>Gender:</label>
                     <div class="gender-group">
-                        <input type="radio" name="gender" value="male" id="male">
+                        <input type="radio" name="gender" value="male" id="male" required>
                         <label for="male">Male</label>
                         <input type="radio" name="gender" value="female" id="female">
                         <label for="female">Female</label>
                     </div>
                 </div>
-
-                <button type="submit">GET 15% OFF</button>
+            
+                <button type="submit">GET UPDATES</button>
             </form>
+            
         </div>
     </div>
 
